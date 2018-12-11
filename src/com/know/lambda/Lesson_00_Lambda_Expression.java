@@ -60,7 +60,8 @@ public class Lesson_00_Lambda_Expression {
         
         Interf3 if3 = (i,j) -> i*j;
         Integer m3_result = if3.m3(12,10);
-        System.out.println("m3_result :: "+m3_result);        
+        System.out.println("m3_result :: "+m3_result);
+        
         
     }    
 }
