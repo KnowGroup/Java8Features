@@ -40,6 +40,25 @@ public class Lesson_01_FuntionalInterface {
     
     public static void main(String[] arg){
         log("30 Square :: "+square.apply(30));
+        
+        java.util.ArrayList<String> names = new java.util.ArrayList<String>();
+        names.add("Raj");
+        names.add("Jaz");
+        names.add("Arya");
+        names.add("Ajay");
+        names.add("Zara");
+        names.add("Madhu");
+        
+        log("Names :: "+names);
+        
+        /**
+         *  Functional Interface java.util.Comparator
+         *  can be defined using Lambda expression
+         */
+        java.util.Comparator<String> c = (s1,s2) -> s1.compareTo(s2);
+        names.sort(c);
+        
+        log("Names Sorted :: "+names);
     }
     
     public static void log(String msg){
