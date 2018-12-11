@@ -10,6 +10,8 @@ package com.know.lambda;
  * containing Single Abstract Method (SAM)
  * 
  * @FunctionalInterface can be used to validate FI at compile time.
+ * USE :
+ *  - Calling Lambda Expression
  * 
  * - FI can have any number of default or static 
  * method but they must have SAM.
@@ -19,5 +21,25 @@ package com.know.lambda;
  * @author KnowGroup
  */
 public class Lesson_01_FuntionalInterace {
+ 
     
+    @FunctionalInterface
+    interface Intef1{
+        abstract void m1();
+    }
+    
+    /*
+        java.util.function.* package contains all pre-defined Functional Interface
+        Like Function<Input_Type,Return_Type>
+    */
+    static java.util.function.Function<Integer,Integer> square = n -> n*n;
+    
+    
+    public static void main(String[] arg){
+        log("30 Square :: "+square.apply(30));
+    }
+    
+    public static void log(String msg){
+        System.out.println(msg);
+    }
 }
