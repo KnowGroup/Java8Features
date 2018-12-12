@@ -12,23 +12,62 @@ package com.know.lambda;
  */
 public class Lesson_02_InHeritance_And_Functional_Interface {
  
+    /*
+      1st CASE
+        IF 
+            Parent is Functional Interface  
+        THEN
+            Child is also Functional Interface        
+    */
+    
     @FunctionalInterface
-    interface A {
-        public void m1();
+    interface A1{
+        public void m();
     }
     
     @FunctionalInterface
-    interface B extends A {
-        public void m1();
-    }
-    
-    public static void main(String[] arg){
-        B b = () -> System.out.println("I am B");
-        A a = () -> System.out.println("I am A");
-        A a_obj = b;
+    interface B1 extends A1{
         
-        b.m1();
-        a.m1();
-        a_obj.m1();
     }
+    
+    
+    /*
+      2nd CASE
+        IF
+            Child contains Single Abstract Method 
+            with signature sames as in Parent
+        THEN
+            Child still be a Functional Interface
+    */    
+    @FunctionalInterface
+    interface A2 {
+        public void m1();
+    }
+    
+    @FunctionalInterface
+    interface B2 extends A2 {
+        public void m1();
+    }
+    
+    /*
+      3rd CASE
+            IF
+                Parent interface if a functional interface 
+                and child contains another abstract method
+            THEN
+                Child interface CAN NOT be functional interface        
+    */
+    @FunctionalInterface
+    interface A3 {
+        public void m3();
+    }
+    //NOT ALLOWED becuase Child B3 has Two abstract method
+    //@FunctionalInterface
+    interface B3 extends A3 {
+        public void m4();
+    }
+    
+    
+    public static void main(String[] arg){}
+    
 }

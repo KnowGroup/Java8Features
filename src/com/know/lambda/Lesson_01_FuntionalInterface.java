@@ -11,11 +11,15 @@ package com.know.lambda;
  * 
  *  -   Lambda expression are ALWAYS associated with Functional Interface
  *  -   NO Separate .class is generated for Lambda expression
+ *  -   FI Can have ANY number of default methods - method with body defined
+ *  -   FI can have ANY number of static methods - static method with body defined
  * 
  * @FunctionalInterface can be used to validate FI at compile time.
  * USE :
- *  - Calling Lambda Expression
- * 
+ *  - Act as TYPE of Lambda Expression
+ *  - Since FI only contain one abstract method(SAM), so we can use Lambda Expression
+ *      to define SAM
+ *  - Holds Lambda Expression
  * - FI can have any number of default or static 
  * method but they must have SAM.
  * 
@@ -29,6 +33,7 @@ public class Lesson_01_FuntionalInterface {
     @FunctionalInterface
     interface Intef1{
         abstract void m1();
+       //ERROR - NOT ALLOWED abstract void m2();
     }
     
     /*

@@ -15,7 +15,7 @@ import static com.know.util.Utility.log;
  * 
  * @author KnowGroup
  */
-public class Lesson_03_Anonymous_Inner_Class_and_Lambda_Expressions {
+public class Lesson_04_Anonymous_Inner_Class_and_Lambda_Expressions {
  
     public static void main(String[] arg){
         Thread t = new Thread(){
